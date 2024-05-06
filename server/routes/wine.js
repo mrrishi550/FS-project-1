@@ -7,7 +7,6 @@ import {
   putData,
 } from "../constroller.js";
 const router = express.Router();
-x;
 router.get("/", getData);
 // router.get("/:rating", getDataById);
 router.get("/:id", getDatasId);
