@@ -31,19 +31,19 @@ export const getDatasId = async (req, res) => {
   }
 };
 
-export const getOne = async (req, res) => {
-  try {
-    const data = await Wine.findOne({ Taste: req.params.name });
-    res.json(data);
-    if (data) {
-      res.status(200).json(data);
-    } else {
-      res.status(404).send((err) => console.log(err));
-    }
-  } catch {
-    res.status(500).send((err) => console.log(err));
-  }
-};
+// export const getOne = async (req, res) => {
+//   try {
+//     const data = await Wine.findOne({ Taste: req.params.name });
+//     res.json(data);
+//     if (data) {
+//       res.status(200).json(data);
+//     } else {
+//       res.status(404).send((err) => console.log(err));
+//     }
+//   } catch {
+//     res.status(500).send((err) => console.log(err));
+//   }
+// };
 
 export const DeleteData = async (req, res) => {
   try {
@@ -54,11 +54,11 @@ export const DeleteData = async (req, res) => {
   }
 };
 
-export const add = async (req, res) => {
-  const data = new Wine(req.body);
-  const saved = await data.save();
-  res.send(saved);
-};
+// export const add = async (req, res) => {
+//   const data = new Wine(req.body);
+//   const saved = await data.save();
+//   res.send(saved);
+// };
 
 export const putData = async (req, res) => {
   try {

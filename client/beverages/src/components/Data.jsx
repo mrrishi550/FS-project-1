@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
-
+import axios from "axios";
 const Data = () => {
   let [data, setData] = useState([]);
+  // useEffect(() => {
+  //   fetch("http://localhost:2010/drinks/wine")
+  //     .then((res) => res.json())
+  //     .then((output) => setData(output));
+  // }, []);
   useEffect(() => {
-    fetch("http://localhost:2010/drinks/wine")
-      .then((res) => res.json())
-      .then((output) => setData(output));
-  }, []);
+    axios
+      .get("https://fs-project-1.onrender.com/drinks/wine/")
+      .then((output) => setData(output))
+      .catch((err) => console.log(err));
+  });
   return (
     <div>
       <ul>
